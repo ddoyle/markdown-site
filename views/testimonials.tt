@@ -5,6 +5,7 @@
         $.get( '/md/' + $contentDiv.data('file') ,function(data) {
             $contentDiv.html(converter.makeHtml(data));
         });
+        $('#testimonials-tab').addClass('active');
     });
 </script>
 <div style='padding-top: 70px;'>

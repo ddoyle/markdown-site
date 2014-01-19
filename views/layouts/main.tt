@@ -30,10 +30,9 @@
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="index.htm">Our Project</a>
-        </div>
         <ul class="nav navbar-nav">
+                <li id="index-tab"><a class="navbar-brand" href="index.htm">Our
+                        Project</a></li>
           <li id="proofreading-tab"><a href="proofreading.htm">What We Do</a></li>
           <li id="clients-tab"><a href="clients.htm">Clients</a></li>
           <li id="testimonials-tab"><a href="testimonials.htm">Testimonials</a></li>
