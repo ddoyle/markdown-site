@@ -7,4 +7,10 @@ get '/' => sub {
     template 'index';
 };
 
+foreach my $page qw( index proofreading clients testimonials charges contact ) {
+    get "/$page.htm" => sub {
+        template $page;
+    };
+}
+
 true;

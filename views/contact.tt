@@ -1,0 +1,12 @@
+<script type="text/javascript">
+    $(function() {
+        var converter = new Markdown.Converter();
+        var $contentDiv = $('#markdown-content')
+        $.get( '/md/' + $contentDiv.data('file') ,function(data) {
+            $contentDiv.html(converter.makeHtml(data));
+        });
+    });
+</script>
+<div style='padding-top: 70px;'>
+<div id='markdown-content' data-file='contact.md'></div>
+</div>
