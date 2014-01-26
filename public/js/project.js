@@ -75,5 +75,5 @@ function get_testimonials(from, converter, callback) {
  */
 function make_html_testimonial(value, converter) {
     return '<p>' + converter.makeHtml(value.quote) + '</p>' +
-        '<p>' + value.name + ' — ' + value.attribution + '</p>';
+        '<p><b>' + value.name + '</b>, ' + value.attribution + '</p>';
 }
