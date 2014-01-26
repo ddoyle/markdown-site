@@ -9,5 +9,5 @@
     });
 </script>
 <div style='padding-top: 70px;'>
-<div id='markdown-content' data-file='clients.md'></div>
+  <div id='markdown-content' data-file='clients.md'></div>
 </div>

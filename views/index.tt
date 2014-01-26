@@ -1,4 +1,26 @@
 <script type="text/javascript">
+    function shuffle(array) {
+      var currentIndex = array.length
+        , temporaryValue
+        , randomIndex
+        ;
+
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+
+      return array;
+    }
+
     $(function() {
         var converter = new Markdown.Converter();
         var $contentDiv = $('#markdown-content')
@@ -6,8 +28,27 @@
             $contentDiv.html(converter.makeHtml(data));
         });
         $('#index-tab').addClass('active');
+
+        var div = $('#testimonials-list');
+        $.getJSON('/content/testimonials.json', function(data) {
+            shuffle(data);
+
+            if (data.length > 2) {
+                data.length = 2;
+            }
+
+            var fragments = [];
+
+            $.each(data, function(index, value) {
+                fragments.push('<p>' + converter.makeHtml(value.quote) + '</p>' +
+                               '<p>' + value.name + ' — ' + value.attribution + '</p>');
+            });
+
+            $(div).html(fragments.join('<hr>'));
+       });
     });
 </script>
 <div style='padding-top: 70px;'>
-<div id='markdown-content' data-file='index.md'></div>
+  <div id='markdown-content' data-file='index.md'></div>
+  <div id='testimonials-list'><em>Coming soon…</em></div>
 </div>
