@@ -9,23 +9,13 @@
 
         set_title_and_active_tab('<% project_name %>', '#index-tab');
 
-        var div = $('#testimonials-list');
-        $.getJSON('content/testimonials.json', function(data) {
-            shuffle(data);
-
-            if (data.length > 2) {
-                data.length = 2;
+        get_testimonials('content/testimonials.json', converter, function(list) {
+            shuffle(list);
+            if (list.length > 2) {
+                list.length = 2;
             }
-
-            var fragments = [];
-
-            $.each(data, function(index, value) {
-                fragments.push('<p>' + converter.makeHtml(value.quote) + '</p>' +
-                               '<p>' + value.name + ' — ' + value.attribution + '</p>');
-            });
-
-            $(div).html(fragments.join('<hr>'));
-       });
+            $('#testimonials-list').html(list.join('<hr>'));
+        });
     });
 </script>
 <div style='padding-top: 70px;'>
