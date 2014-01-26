@@ -2,7 +2,7 @@
     $(function() {
         var converter = new Markdown.Converter();
         var $contentDiv = $('#markdown-content')
-        $.get( '/content/' + $contentDiv.data('file') ,function(data) {
+        $.get( 'content/' + $contentDiv.data('file') ,function(data) {
             $contentDiv.html(converter.makeHtml(data));
         });
         set_title_and_active_tab('<% project_name %>', '#clients-tab');
