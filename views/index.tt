@@ -1,25 +1,4 @@
 <script type="text/javascript">
-    function shuffle(array) {
-      var currentIndex = array.length
-        , temporaryValue
-        , randomIndex
-        ;
-
-      // While there remain elements to shuffle...
-      while (0 !== currentIndex) {
-
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-
-        // And swap it with the current element.
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-      }
-
-      return array;
-    }
 
     $(function() {
         var converter = new Markdown.Converter();
@@ -27,10 +6,11 @@
         $.get( '/content/' + $contentDiv.data('file') ,function(data) {
             $contentDiv.html(converter.makeHtml(data));
         });
-        $('#index-tab').addClass('active');
+
+        set_title_and_active_tab('<% project_name %>', '#index-tab');
 
         var div = $('#testimonials-list');
-        $.getJSON('/content/testimonials.json', function(data) {
+        $.getJSON('content/testimonials.json', function(data) {
             shuffle(data);
 
             if (data.length > 2) {

@@ -5,7 +5,7 @@
         $.get( '/content/' + $contentDiv.data('file') ,function(data) {
             $contentDiv.html(converter.makeHtml(data));
         });
-        $('#contact-tab').addClass('active');
+        set_title_and_active_tab('<% project_name %>', '#contact-tab');
     });
 </script>
 <div style='padding-top: 70px;'>
