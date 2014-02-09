@@ -26,21 +26,29 @@
     <link href="css/bootstrap-overrides.css" rel="stylesheet">
 
     <title><% project_name %></title>
-
   </head>
 
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
-        <ul class="nav navbar-nav">
-                <li id="index-tab"><a class="navbar-brand" href="index.htm"><%
-                        project_name %></a></li>
-          <li id="proofreading-tab"><a href="proofreading.htm">What We Do</a></li>
-          <li id="clients-tab"><a href="clients.htm">Clients</a></li>
-          <li id="testimonials-tab"><a href="testimonials.htm">Testimonials</a></li>
-          <li id="charges-tab"><a href="charges.htm">Charges</a></li>
-          <li id="contact-tab"><a href="contact.htm">Contact</a></li>
-        </ul>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.htm"><% project_name %></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li id="proofreading-tab"><a href="proofreading.htm">What We Do</a></li>
+            <li id="clients-tab"><a href="clients.htm">Clients</a></li>
+            <li id="testimonials-tab"><a href="testimonials.htm">Testimonials</a></li>
+            <li id="charges-tab"><a href="charges.htm">Charges</a></li>
+            <li id="contact-tab"><a href="contact.htm">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
 
