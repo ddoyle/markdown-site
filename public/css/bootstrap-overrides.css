@@ -1,0 +1,11 @@
+.navbar-nav li {
+    font-size: 130%;
+}
+
+.navbar-brand {
+    font-size: 130%;
+}
+
+body, html {
+    height: 100%;
+}
