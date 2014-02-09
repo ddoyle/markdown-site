@@ -23,6 +23,7 @@
     <script src='<% request.uri_base %>/js/project.js' type='text/javascript'></script>
     <!-- Bootstrap core CSS -->
     <link href="<% request.uri_base %>/css/bootstrap.css" rel="stylesheet">
+    <link href="<% request.uri_base %>/css/bootstrap-overrides.css" rel="stylesheet">
 
     <title><% project_name %></title>
 
@@ -32,8 +33,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <ul class="nav navbar-nav">
-                <li id="index-tab"><a class="navbar-brand" href="index.htm"><%
-                        project_name %></a></li>
+                <li id="index-tab"><a class="navbar-brand" href="index.htm">Wordfix</a></li>
           <li id="proofreading-tab"><a href="proofreading.htm">What We Do</a></li>
           <li id="clients-tab"><a href="clients.htm">Clients</a></li>
           <li id="testimonials-tab"><a href="testimonials.htm">Testimonials</a></li>
@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="height:100%; background-color: #EEE;">
       <% content %>
     </div><!-- /.container -->
   </body>

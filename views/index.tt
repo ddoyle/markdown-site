@@ -9,16 +9,22 @@
 
         set_title_and_active_tab('<% project_name %>', '#index-tab');
 
-        get_testimonials('content/testimonials.json', converter, function(list) {
-            shuffle(list);
-            if (list.length > 2) {
-                list.length = 2;
-            }
-            $('#testimonials-list').html(list.join('<hr>'));
-        });
+        function rotate_testimonials() {
+            get_testimonials('content/testimonials.json', converter, function(list) {
+                shuffle(list);
+                if (list.length > 2) {
+                    list.length = 2;
+                }
+                $('#testimonials-list').html("<h3>Some Testimonials</h3>" + list.join('<hr>'));
+            });
+        }
+
+        rotate_testimonials();
+        setInterval(rotate_testimonials, 30000);
     });
 </script>
-<div style='padding-top: 70px;'>
-  <div id='markdown-content' data-file='index.md'></div>
-  <div id='testimonials-list'><em>Coming soon…</em></div>
+<div class='row' style='padding-top: 70px;'>
+  <div id='markdown-content' class='col-md-8' data-file='index.md'></div>
+  <div class='col-md-4' id='testimonials-list'><em>Coming soon…</em></div>
+</div>
 </div>
