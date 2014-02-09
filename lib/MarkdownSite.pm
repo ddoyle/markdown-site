@@ -4,7 +4,7 @@ use Dancer2;
 our $VERSION = '0.1';
 
 my $template_data = {
-    project_name => 'My Project',
+    project_name => 'Wordfix',
 };
 
 get '/' => sub {
