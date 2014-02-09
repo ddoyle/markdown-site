@@ -39,7 +39,7 @@ function set_title_and_active_tab(project_name, locator) {
         document.title = project_name;
     }
     else {
-        document.title = project_name + ' • ' + div.text();
+        document.title = project_name + ' - ' + div.text();
     }
 
     div.addClass('active');
