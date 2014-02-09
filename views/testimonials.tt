@@ -1,24 +1,18 @@
 <script type="text/javascript">
-
     $(function() {
         var converter = new Markdown.Converter();
         var $contentDiv = $('#markdown-content')
         $.get( '/content/' + $contentDiv.data('file') ,function(data) {
             $contentDiv.html(converter.makeHtml(data));
         });
-
-        set_title_and_active_tab('<% project_name %>', '#index-tab');
+        set_title_and_active_tab('<% project_name %>', '#testimonials-tab');
 
         get_testimonials('content/testimonials.json', converter, function(list) {
-            shuffle(list);
-            if (list.length > 2) {
-                list.length = 2;
-            }
             $('#testimonials-list').html(list.join('<hr>'));
         });
     });
 </script>
 <div style='padding-top: 70px;'>
-  <div id='markdown-content' data-file='index.md'></div>
+  <div id='markdown-content' data-file='testimonials.md'></div>
   <div id='testimonials-list'><em>Coming soon…</em></div>
 </div>
