@@ -3,7 +3,7 @@
     $(function() {
         var converter = new Markdown.Converter();
         var $contentDiv = $('#markdown-content')
-        $.get( '/content/' + $contentDiv.data('file') ,function(data) {
+        $.get( 'content/' + $contentDiv.data('file') ,function(data) {
             $contentDiv.html(converter.makeHtml(data));
         });
 
